@@ -1,0 +1,19 @@
+{
+    "twitter": {
+        "consumer_key": "",
+        "consumer_secret": "",
+        "access_token": "",
+        "access_token_secret": ""
+    },
+    "destination": "",
+    "file": {
+        "location": ""
+    },
+    "nosql": {
+        "host": "",
+        "port": 27017,
+        "db": "",
+        "username": "",
+        "password": ""
+    }
+}
