@@ -1,5 +1,7 @@
 # Twitter hydration
 
+Hydrates tweets to a mongo database.
+
 ## Setup
 
 - Create a `config.json` file (_rename the `config.example.json` to `config.json`_).
