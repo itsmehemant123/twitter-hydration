@@ -5,10 +5,6 @@
         "access_token": "",
         "access_token_secret": ""
     },
-    "destination": "",
-    "file": {
-        "location": ""
-    },
     "nosql": {
         "host": "",
         "port": 27017,
