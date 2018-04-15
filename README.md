@@ -12,7 +12,8 @@ pip install -r requirements.txt
 
 ### Setting the sources
 
-- Place all the files containing the required tweet ids in the folder specified in the `source_folder`.
+- Place all the files containing the required tweet ids in a folder as specified in the `source_folder`.
+- Make sure this folder is in the project root.
 
 ## Run the script
 

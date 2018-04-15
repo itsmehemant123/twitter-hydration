@@ -14,7 +14,7 @@ t = Twarc(config['twitter']['consumer_key'], config['twitter']['consumer_secret'
           config['twitter']['access_token'], config['twitter']['access_token_secret'])
 
 for source_file in os.listdir('./' + config['source_folder']):
-    tweet_ids = open('./' + config['source_folder'] + source_file)
+    tweet_ids = open('./' + config['source_folder'] + '/' + source_file)
     new_tweet_ids = []
     for line in tweet_ids:
         if (not handle.check(line)):
