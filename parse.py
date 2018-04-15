@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import logging
 from connectors.mongodb.mongohandle import MongoHandle
 from twarc import Twarc
@@ -22,10 +23,14 @@ for source_file in os.listdir('./' + config['source_folder']):
     logging.info('Preparing to hydrate: ' + source_file)
     tweet_ids = open('./' + config['source_folder'] + '/' + source_file)
     new_tweet_ids = []
+    logging.info('Parsing tweet ids.')
+    start = time.time()
     for line in tweet_ids:
-        if (not handle.check(line)):
+        if (not handle.is_written(line)):
             new_tweet_ids.append(line)
 
+    end = time.time()
+    logging.info('Finished looking for new tweets in %.2f' % (end - start))
     handle.write(t.hydrate(new_tweet_ids), source_file)
     tweet_ids.close()
     logging.info('Finished hydrating: ' + source_file)
