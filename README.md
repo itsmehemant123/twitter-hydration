@@ -4,6 +4,11 @@
 
 - Create a `config.json` file (_rename the `config.example.json` to `config.json`_).
 - Set all the fields according to your setup.
+- Install the dependencies with:
+
+```
+pip install -r requirements.txt
+```
 
 ### Setting the sources
 
