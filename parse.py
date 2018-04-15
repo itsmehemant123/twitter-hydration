@@ -26,7 +26,7 @@ for source_file in os.listdir('./' + config['source_folder']):
         if (not handle.check(line)):
             new_tweet_ids.append(line)
 
-    handle.write(t.hydrate(new_tweet_ids))
+    handle.write(t.hydrate(new_tweet_ids), source_file)
     tweet_ids.close()
     logging.info('Finished hydrating: ' + source_file)
 

@@ -6,9 +6,9 @@ class MongoHandle:
         self.connection = connect(config['nosql']['db'], host=config['nosql']['host'], port=config['nosql']
                 ['port'], username=config['nosql']['username'], password=config['nosql']['password'])
 
-    def write(self, tweets):
+    def write(self, tweets, source_file):
         for tweet in tweets:
-            db_tweet = Tweet.objects(tweet_id=tweet['id']).upsert_one(tweet_id = tweet['id'], body = tweet)
+            db_tweet = Tweet.objects(tweet_id=tweet['id']).upsert_one(tweet_id = tweet['id'], body = tweet, source_file = source_file)
             db_tweet.save()
 
     def check(self, tweet_id):
