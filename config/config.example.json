@@ -5,6 +5,7 @@
         "access_token": "",
         "access_token_secret": ""
     },
+    "source_folder": "",
     "nosql": {
         "host": "",
         "port": 27017,

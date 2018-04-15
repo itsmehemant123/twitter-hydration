@@ -13,8 +13,8 @@ handle = MongoHandle(config)
 t = Twarc(config['twitter']['consumer_key'], config['twitter']['consumer_secret'],
           config['twitter']['access_token'], config['twitter']['access_token_secret'])
 
-for source_file in os.listdir('./source'):
-    tweet_ids = open('./source/' + source_file)
+for source_file in os.listdir('./' + config['source_folder']):
+    tweet_ids = open('./' + config['source_folder'] + source_file)
     new_tweet_ids = []
     for line in tweet_ids:
         if (not handle.check(line)):
@@ -22,5 +22,6 @@ for source_file in os.listdir('./source'):
 
     handle.write(t.hydrate(new_tweet_ids))
     tweet_ids.close()
+    logging.info('Finished hydrating: ' + source_file)
 
 handle.clean()
