@@ -11,7 +11,6 @@ class MongoHandle:
         end1 = time.time()
         logging.info('Connected to Mongo in: %.2f seconds.' % (end1 - start1))
         self.written_tweets = [str(tweet['tweet_id']) for tweet in Tweet.objects]
-        print(self.written_tweets[:10])
         end2 = time.time()
         logging.info('Fetched existing tweets from database in: %.2f seconds.' % (end2 - end1))
 
